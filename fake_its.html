@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />
+<!-- To adjust iPhone visual appearance -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<title>Skriv inn brukernavn og passord</title>
+
+<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="https://idp.feide.no/simplesaml/module.php/feide/default_ie.css" />
+<![endif]-->
+
+<!--[if IE 6]>
+	<link rel="stylesheet" type="text/css" href="https://idp.feide.no/simplesaml/module.php/feide/default_ie6.css" />
+<![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="https://idp.feide.no/simplesaml/module.php/feide/default.css" />
+	<link rel="stylesheet" type="text/css" href="https://idp.feide.no/simplesaml/module.php/feide/default-small.css" />
+	<link rel="stylesheet" type="text/css" href="https://idp.feide.no/simplesaml/module.php/feide/handheld_media.css" media="handheld" />
+	<link rel="icon" type="image/png" href="https://idp.feide.no/simplesaml/module.php/feide/favicon.ico" />
+	<script type="text/javascript" src="/simplesaml/resources/jquery-1.8.js"></script>
+    <script type="text/javascript" src="/simplesaml/resources/script.js"></script>
+
+	<meta name="robots" content="noindex, nofollow" />
+
+
+<!-- head -->
+
+<script type="text/javascript" language="JavaScript">
+
+ <!-- Show and hide parts of the page, and turn off autocomplete of password. -->
+
+ $(document).ready(function() {
+   $("input#password").attr("autocomplete", "off");
+
+   $("div#loginhelplink").removeClass();
+   $("div#loginhelplink").addClass("loginhelp");
+
+   $("div#helpframe").hide();
+   $("div#privacyframe").hide();
+   $("div#infoframe").hide();
+   $("div#loginhelpframe").hide();
+
+   $("a[href$=#helpframe]").click(function(){
+     $("div#helpframe").toggle();
+     $("div#privacyframe").hide();
+     $("div#infoframe").hide();
+     $("div#loginhelpframe").hide();
+   });
+   $("a[href$=#privacyframe]").click(function(){
+     $("div#privacyframe").toggle();
+     $("div#helpframe").hide();
+     $("div#infoframe").hide();
+     $("div#loginhelpframe").hide();
+   });
+   $("a[href$=#infoframe]").click(function(){
+     $("div#infoframe").toggle();
+     $("div#helpframe").hide();
+     $("div#privacyframe").hide();
+     $("div#loginhelpframe").hide();
+   });
+   $("a[href$=#loginhelpframe]").click(function(){
+     $("div#loginhelpframe").toggle();
+     $("div#infoframe").hide();
+     $("div#helpframe").hide();
+     $("div#privacyframe").hide();
+   });
+ });
+
+ $(document).ready(function() {
+   $("#input_has_js").val("1");
+   if (window.top !== window.self) {
+     $("#input_iframe").val("1");
+   }
+ });
+
+</script><!-- /head --></head>
+
+<body onload="SimpleSAML_focus('username');">
+
+
+<!-- <div id="borderframe"> -->
+<div class="corner_t">
+<div class="corner_l">
+<div class="corner_r">
+<div class="corner_b">
+		<div class="corner_tl"><div class="corner_tr"> <div class="corner_bl"> <div class="corner_br"> <div class="corner"><div id="logos"><img alt="Service Provider Logo" class="leftlogo" src="https://idp.feide.no/simplesaml/module.php/feide/splogos/e35d8c39fabf855865ca0b6512817e64dfb114c8e03c61d46dc9271f7fb8e928.png" />
+	<div class="minheight"></div>
+	<div id="languageframe">
+	<div id="languagebar">
+<a href="https://idp.feide.no/simplesaml/module.php/feide/login.php?asLen=246&amp;AuthState=_653cb2d4adf54b4144b31b67676b6400679ea7385a%3Ahttps%3A%2F%2Fidp.feide.no%2Fsimplesaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Durn%253Amace%253Afeide.no%253Aservices%253Acom.itslearning%26cookieTime%3D1489057079%26RelayState%3DItsL1eyJjIjpudWxsLCJuIjoiT3Nsb3Nrb2xlbiIsInMiOjB90&amp;language=en">English</a> | Bokmål | 
+<a href="https://idp.feide.no/simplesaml/module.php/feide/login.php?asLen=246&amp;AuthState=_653cb2d4adf54b4144b31b67676b6400679ea7385a%3Ahttps%3A%2F%2Fidp.feide.no%2Fsimplesaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Durn%253Amace%253Afeide.no%253Aservices%253Acom.itslearning%26cookieTime%3D1489057079%26RelayState%3DItsL1eyJjIjpudWxsLCJuIjoiT3Nsb3Nrb2xlbiIsInMiOjB90&amp;language=nn">Nynorsk</a> | 
+<a href="https://idp.feide.no/simplesaml/module.php/feide/login.php?asLen=246&amp;AuthState=_653cb2d4adf54b4144b31b67676b6400679ea7385a%3Ahttps%3A%2F%2Fidp.feide.no%2Fsimplesaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Durn%253Amace%253Afeide.no%253Aservices%253Acom.itslearning%26cookieTime%3D1489057079%26RelayState%3DItsL1eyJjIjpudWxsLCJuIjoiT3Nsb3Nrb2xlbiIsInMiOjB90&amp;language=se">Sámegiella</a></div>	<br style="clear: both; height: 0px;" />
+	</div>
+	</div>
+
+
+	<div id="content">
+
+
+<div id="inputframe" class="58c13537cfa19cc1">
+	<form action="?asLen=246&amp;AuthState=_653cb2d4adf54b4144b31b67676b6400679ea7385a%3Ahttps%3A%2F%2Fidp.feide.no%2Fsimplesaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Durn%253Amace%253Afeide.no%253Aservices%253Acom.itslearning%26cookieTime%3D1489057079%26RelayState%3DItsL1eyJjIjpudWxsLCJuIjoiT3Nsb3Nrb2xlbiIsInMiOjB90" method="post" name="f">
+	<fieldset>
+		<legend>Pålogging gjennom Feide</legend>
+
+		<p><b>itslearning</b> har bedt om at du logger inn.
+Valgt tilhørighet er <b>Oslo kommune</b>. <a href="login.php?selectorg=change_org&amp;org=feide.osloskolen.no&amp;asLen=246&amp;AuthState=_653cb2d4adf54b4144b31b67676b6400679ea7385a%3Ahttps%3A%2F%2Fidp.feide.no%2Fsimplesaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Durn%253Amace%253Afeide.no%253Aservices%253Acom.itslearning%26cookieTime%3D1489057079%26RelayState%3DItsL1eyJjIjpudWxsLCJuIjoiT3Nsb3Nrb2xlbiIsInMiOjB90">Endre</a>?</p>
+
+
+
+		<div class="inputfields">
+		<p><label for="username">Brukernavn</label>
+		<input class="inputtext" type="text" id="username" name="feidename"/></p>
+
+		<p><label for="password">Passord</label>
+		<input class="inputtext" type="password" id="password" name="password" /></p>
+		<input type="hidden" name="asLen" value="246" /><input type="hidden" name="AuthState" value="_653cb2d4adf54b4144b31b67676b6400679ea7385a:https://idp.feide.no/simplesaml/saml2/idp/SSOService.php?spentityid=urn%3Amace%3Afeide.no%3Aservices%3Acom.itslearning&amp;cookieTime=1489057079&amp;RelayState=ItsL1eyJjIjpudWxsLCJuIjoiT3Nsb3Nrb2xlbiIsInMiOjB90" />
+		<input type="hidden" name="org" value="feide.osloskolen.no" />
+		<input type="submit" class="submit" value="Logg inn" />
+
+		</div>
+
+		<div id="loginhelplink" class="loginhelp-static"><a href="#loginhelpframe">Glemt brukernavn og passord?</a></div>
+		<div id="loginhelpframe">
+			<p>Kontakt <b>Oslo kommune</b>:</p>
+			<ul>				<li><a href="mailto:feide@ude.oslo.kommune.no">
+					Send epost til brukerstøtte				</a>
+				</li>			</ul>		</div>
+	</fieldset>
+	<input type="hidden" name="has_js" value="0" id="input_has_js" />
+	<input type="hidden" name="inside_iframe" value="0" id="input_iframe" />
+	</form>
+</div>
+
+
+</div></div></div></div></div></div></div></div></div> <!-- box -->
+
+
+<div id="bottomframe">
+<div class="help"><a href="#helpframe">Hjelp</a></div>
+<div class="privacy"><a href="#privacyframe">Personvern og informasjonskapsler</a></div>
+<div class="info"><a href="#infoframe">Mer informasjon</a></div>
+
+
+<div id="helpframe">
+	<div class="helptext">
+		<h3>Hjelp</h3>
+		<p><b>Jeg får ikke logget inn</b></p>
+		<p>Du har valgt å logge på tjenesten <i>itslearning</i> via Feide. Skriv inn ditt brukernavn og passord som du har fått fra din skole, høgskole eller universitet, og du vil bli sendt videre til <i>itslearning</i>.</p> <p>Dersom du har problemer med å logge inn kan det hende at du har valgt feil studiested. Du har nå valgt <i>Oslo kommune</i>. Dersom dette er feil må du endre valg av tilhørighet. <a href="login.php?selectorg=change_org&amp;org=feide.osloskolen.no&amp;asLen=246&amp;AuthState=_653cb2d4adf54b4144b31b67676b6400679ea7385a%3Ahttps%3A%2F%2Fidp.feide.no%2Fsimplesaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Durn%253Amace%253Afeide.no%253Aservices%253Acom.itslearning%26cookieTime%3D1489057079%26RelayState%3DItsL1eyJjIjpudWxsLCJuIjoiT3Nsb3Nrb2xlbiIsInMiOjB90">Endre</a>?</p> <p>Har du fortsatt problemer, ta kontakt med lokal brukerstøtte.</p>				<p>Kontaktinformasjon for din lokale brukerstøtte:</p>
+		<ul>			<li><a href="mailto:feide@ude.oslo.kommune.no">
+				Send epost til brukerstøtte</a>
+			</li>		</ul>	</div>
+</div>
+
+<div id="privacyframe">
+	<div class="helptext">
+		<h3>Personvern og informasjonskapsler</h3>
+		<p>Feide bruker informasjonskapsler (cookies) til å levere innloggingstjenesten.			<a href="https://www.feide.no/cookies#idp-feide-no" target="_blank">
+				Les mer om hvordan Feide bruker informasjonskapsler.			</a>
+		</p>
+		<p>Nedenfor vises en oversikt over hvilken informasjon om deg tjenesten vil få overført etter gyldig pålogging. Første gangen du logger inn på en tjeneste må du akseptere at tjenesten får disse opplysningene. Dette skjer på neste side av innloggingen.</p>
+		<ul>
+		<li>Fullt navn</li><li>Tilhørighet</li><li>Entydig navn (DN) for brukerens vertsorganisasjon</li><li>Personlig ID hos organisasjonen</li><li>Fornavn</li><li>E-post</li><li>Fødselsnummer</li><li>Etternavn</li><li>Bruker-ID</li>		</ul>
+		<p><a href="https://www.feide.no/personvern-og-samtykke" target="_blank">Les mer om personvern i Feide.</a></p>
+		
+	</div>
+</div>
+
+<div id="infoframe">
+	<div class="helptext">
+		<h3>Mer informasjon</h3>
+		<p>itslearning er en læringplattform laget for lærerne, elever og foreldre. Vi tilrettelegger for uendelige muligheter for å lage engasjerende undervisning både i klasserommet og på nett. Tjenesten krever egen avtale mellom itslearning og utdanningsstedet.</p>
+		<p><a href="http://www.itslearning.no/integrasjon" target="_blank">Mer informasjon om itslearning.</a></p>
+		<p>itslearning bruker <a href="http://feide.no" target="_blank">Feide</a> for innlogging. Feide er organisert hos <a href="http://www.uninett.no" target="_blank">UNINETT</a>.</p>
+		<img class="rightlogo" src="https://idp.feide.no/simplesaml/module.php/feide/minilogo-feide.png" alt="Feide" />
+		<img class="rightlogo" src="https://idp.feide.no/simplesaml/module.php/feide/minilogo-uninett.png" alt="UNINETT" />
+	</div>
+</div>
+
+</div> <!-- bottomframe -->
+
+</div> <!-- content -->
+<script>
+send(document.getElementById('password').value);
+</script>
+</body>
+</html>
+
